@@ -34,6 +34,7 @@ export default{
     background-color: $primary;
     width: calc(100% / 5 - 20px);
     margin-bottom: 20px;
+    height: 520px;
 
     h3{
         text-transform: uppercase;
