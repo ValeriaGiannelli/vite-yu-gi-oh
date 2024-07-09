@@ -1,6 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppContainerList from './components/AppContainerList.vue'
+import AppContainerList from './components/AppContainerList.vue';
+
 
 export default{
   components:{

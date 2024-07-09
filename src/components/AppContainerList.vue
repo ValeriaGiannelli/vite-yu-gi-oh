@@ -1,7 +1,11 @@
 <script>
+import CardModel from './CardModel.vue';
 
 export default{
     name: "AppContainerList",
+    components:{
+        CardModel,
+    }
 }
 
 </script>
@@ -13,6 +17,8 @@ export default{
             <div class="found">
                 Found 39 cards
             </div>
+
+            <CardModel />
 
         </div>
     </div>
@@ -34,14 +40,15 @@ export default{
     width: 80%;
     margin: 0 auto;
     padding: 40px;
-    background-color: white;
+    background-color: $secondary;
+    flex-wrap: wrap;
 
     .found{
         width: 100%;
         padding: 20px;
         font-size: 20px;
-        background-color: $secondary;
-        color: white;
+        background-color: $bg-black;
+        color: $secondary;
     }
 }
 
