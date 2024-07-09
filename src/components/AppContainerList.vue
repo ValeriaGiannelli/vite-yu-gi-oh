@@ -1,11 +1,20 @@
 <script>
 import CardModel from './CardModel.vue';
 
+// importo lo store
+import {store} from '../store.js';
+
 export default{
     name: "AppContainerList",
     components:{
         CardModel,
+    },
+    data(){
+        return {
+            store,
+        }
     }
+
 }
 
 </script>
@@ -18,16 +27,7 @@ export default{
                 Found 39 cards
             </div>
 
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
-            <CardModel />
+            <CardModel v-for="card in store.cardList" :key="card.id" :infoCard="card"/>
 
         </div>
     </div>

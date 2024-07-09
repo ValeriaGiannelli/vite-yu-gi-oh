@@ -1,21 +1,25 @@
 <script>
 export default{
     name: "CardModel",
+    props: {
+        infoCard: Object,
+    }
 }
 
 </script>
 
 <template>
-    
+
     <!-- container della card -->
     <div class="card">
         <!-- immagine della carta -->
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%3Fid%3DOIP.QTXaEnb4nBZigUZ5mXkzgAAAAA%26pid%3DApi&f=1&ipt=1cca9c8fc4fbb53d19c50d5ff47e0b43e50e811e4847b882c068456ed154a20f&ipo=images" alt="">
+        <img :src="infoCard.card_images[0].image_url" alt="">
 
         <!-- sezione del titolo della carta e tipèologia -->
         <div>
-            <h3>Nome della carta</h3>
-            <h5>Tipo di carta</h5>
+            <h3>{{infoCard.name}}</h3>
+            <h5>{{infoCard.archetype}}</h5>
+            <h5>{{infoCard.type}}</h5>
         </div>
         
     </div>
