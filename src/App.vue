@@ -1,9 +1,11 @@
 <script>
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader.vue';
+import AppContainerList from './components/AppContainerList.vue'
 
 export default{
   components:{
     AppHeader,
+    AppContainerList,
   }
 }
 
@@ -12,6 +14,11 @@ export default{
 <template>
 
   <AppHeader />
+
+  <main>
+    <AppContainerList />
+
+  </main>
 
 </template>
 
