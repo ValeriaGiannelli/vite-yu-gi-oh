@@ -26,6 +26,9 @@ export default{
 .card{
     text-align: center;
     background-color: $primary;
+    width: calc(100% / 5 - 20px);
+    margin-bottom: 20px;
+    
     h3{
         text-transform: uppercase;
         margin-bottom: 20px;

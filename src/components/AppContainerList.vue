@@ -19,6 +19,15 @@ export default{
             </div>
 
             <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
+            <CardModel />
 
         </div>
     </div>
@@ -42,6 +51,7 @@ export default{
     padding: 40px;
     background-color: $secondary;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .found{
         width: 100%;
