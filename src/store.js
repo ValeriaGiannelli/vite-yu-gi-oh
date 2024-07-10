@@ -8,6 +8,9 @@ export const store = reactive({
     // URL dell'API al quale andremo a fare la richiesta dei file
     apiURL: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
 
+    // parametro per la Key archetipo
+    apiArchetypeParam: 'archetype',
+
     // URL dell'API per prendere solo gli archetipi
     apiURLArchetype: "https://db.ygoprodeck.com/api/v7/archetypes.php",
     archetypeList:[],

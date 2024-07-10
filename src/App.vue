@@ -27,10 +27,12 @@ export default{
   // metodo per fare la chiamata all'API
   methods:{
     getCard(){
+
       axios.get(store.apiURL)
         .then(result =>{
           // questo è l'attay degli oggetti
           // console.log(result.data.data);
+          console.log("ha caricato la pagina");
           // lo devo salvare nel mio array vuoto
           store.cardList = result.data.data;
 
@@ -42,7 +44,7 @@ export default{
     getArchetype(){
       axios.get(store.apiURLArchetype)
       .then(result=>{
-        console.log(result.data);
+        // console.log(result.data);
         store.archetypeList = result.data;
       }).catch(err => {
         console.log(err);
@@ -66,7 +68,7 @@ export default{
   <AppHeader />
 
   <main>
-    <AppSearch />
+    <AppSearch @changeArchetype="getCard"/>
 
     <AppContainerList />
 
