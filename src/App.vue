@@ -27,12 +27,18 @@ export default{
   // metodo per fare la chiamata all'API
   methods:{
     getCard(){
+      // definire l'endpoint dal quale poi si andranno a fare le selezioni
+      let endPoint = store.apiURL;
 
-      axios.get(store.apiURL)
+      // se la persona ha selezionato qualcosa, prendi solo le card che hanno l'archetipo uguale
+      if(store.archetypeSelected !== 'all'){
+        endPoint += `&${store.apiArchetypeParam}=${store.archetypeSelected}`;
+      }
+
+      axios.get(endPoint)
         .then(result =>{
           // questo è l'attay degli oggetti
           // console.log(result.data.data);
-          console.log("ha caricato la pagina");
           // lo devo salvare nel mio array vuoto
           store.cardList = result.data.data;
 
