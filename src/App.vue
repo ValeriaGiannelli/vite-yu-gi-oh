@@ -31,9 +31,15 @@ export default{
       let endPoint = store.apiURL;
 
       // se la persona ha selezionato qualcosa, prendi solo le card che hanno l'archetipo uguale
-      if(store.archetypeSelected !== 'all'){
+      if(store.archetypeSelected !== 'all' && store.archetypeSelected !== 'none'){
         endPoint += `&${store.apiArchetypeParam}=${store.archetypeSelected}`;
-      }
+      } else if(store.archetypeSelected === 'none'){
+        let nonArchetype = [];
+        // console.log(store.cardList.filter(card => !store.archetypeList.includes(card)));
+        nonArchetype = store.cardList.filter(card => !store.archetypeList.includes(card));
+        console.log("non archetipi" + `${nonArchetype}`);
+        // store.cardList = store.cardList.filter(card => !store.archetypeList.includes(card));
+      } 
 
       axios.get(endPoint)
         .then(result =>{
@@ -55,7 +61,12 @@ export default{
       }).catch(err => {
         console.log(err);
       })
-    }
+    },
+    // getNonArchetypeCards(){
+    //   let cardListCopy = [...store.cardList];
+    //   console.log(store.cardList);
+    //   // console.log(store.cardList.filter(card => !store.archetypeList.includes(card))); 
+    // }
   },
 
   
@@ -64,7 +75,7 @@ export default{
   created(){
     this.getCard();
     this.getArchetype();
-  }
+  },
 }
 
 </script>
