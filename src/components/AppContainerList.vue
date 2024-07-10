@@ -40,8 +40,7 @@ export default{
 @use '../styles/partials/variables' as *;
 
 .bg{
-    background-color: $primary;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 40px;
 }
 

@@ -19,7 +19,7 @@ export default{
         <div>
             <h3>{{infoCard.name}}</h3>
             <h5>{{infoCard.archetype}}</h5>
-            <h5>{{infoCard.type}}</h5>
+            <!-- <h5>{{infoCard.type}}</h5> -->
         </div>
         
     </div>
