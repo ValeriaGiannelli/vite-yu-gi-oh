@@ -22,7 +22,7 @@ export default {
             <option v-for="archetipo in store.archetypeList" :value="archetipo.archetype_name">{{archetipo.archetype_name}}</option>
         </select>
 
-        archetipo scelto: {{ store.archetypeSelected }}
+        <!-- archetipo scelto: {{ store.archetypeSelected }} -->
 
     </div>
 

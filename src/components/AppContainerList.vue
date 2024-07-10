@@ -50,7 +50,7 @@ export default{
     padding: 40px;
     background-color: $secondary;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap:20px;
 
     .found{
         width: 100%;
