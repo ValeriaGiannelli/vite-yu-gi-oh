@@ -4,6 +4,7 @@ import axios from "axios";
 
 import AppHeader from './components/AppHeader.vue';
 import AppContainerList from './components/AppContainerList.vue';
+import AppSearch from './components/AppSearch.vue';
 
 // importo lo store
 import {store} from './store.js';
@@ -14,6 +15,7 @@ export default{
   components:{
     AppHeader,
     AppContainerList,
+    AppSearch,
   },
   // export il data store
   data(){
@@ -50,6 +52,8 @@ export default{
   <AppHeader />
 
   <main>
+    <AppSearch />
+
     <AppContainerList />
 
   </main>
@@ -58,5 +62,10 @@ export default{
 
 <style lang="scss">
 @use './styles/general.scss' as *;
+@use './styles/partials/variables' as *;
+
+main{
+  background-color: $primary;
+}
 
 </style>
