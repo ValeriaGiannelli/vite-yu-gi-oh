@@ -17,5 +17,8 @@ export const store = reactive({
     // archetipo selezioonato per il v-model
     archetypeSelected: 'all',
 
+    // lista non archetipi
+    nonArchetypeCards: [],
+
 });
 
