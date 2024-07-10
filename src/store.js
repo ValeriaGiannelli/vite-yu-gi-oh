@@ -11,6 +11,8 @@ export const store = reactive({
     // URL dell'API per prendere solo gli archetipi
     apiURLArchetype: "https://db.ygoprodeck.com/api/v7/archetypes.php",
     archetypeList:[],
+    // archetipo selezioonato per il v-model
+    archetypeSelected: '',
 
 });
 

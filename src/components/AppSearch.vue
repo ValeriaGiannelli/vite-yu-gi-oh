@@ -6,7 +6,7 @@ export default {
     name: "AppSearch",
     data(){
         return{
-            store,
+            store,          
         }
     }
 }
@@ -15,12 +15,14 @@ export default {
 
 <template>
     <div class="container">
-        <select>
+        <select v-model="store.archetypeSelected">
             <!-- valore di partenza -->
-            <option value="empty" selected="selected">---</option>
+            <option value="all">All</option>
             <!-- lista degli archetipi in base all'API -->
-            <option v-for="archetipo in store.archetypeList" :value="archetipo.archetype_name">{{archetipo.archetype_name}}</option>
+            <option v-for="archetipo in store.archetypeList" :value="archetipo.archetype_name" @change="$emit(changeArchetype)">{{archetipo.archetype_name}}</option>
         </select>
+
+        archetipo scelto: {{ store.archetypeSelected }}
 
     </div>
 
