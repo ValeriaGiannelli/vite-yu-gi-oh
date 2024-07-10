@@ -16,7 +16,9 @@ export default {
 <template>
     <div class="container">
         <select>
+            <!-- valore di partenza -->
             <option value="empty" selected="selected">---</option>
+            <!-- lista degli archetipi in base all'API -->
             <option v-for="archetipo in store.archetypeList" :value="archetipo.archetype_name">{{archetipo.archetype_name}}</option>
         </select>
 
