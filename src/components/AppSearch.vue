@@ -4,6 +4,11 @@ import {store} from '../store.js';
 
 export default {
     name: "AppSearch",
+    data(){
+        return{
+            store,
+        }
+    }
 }
 
 </script>
@@ -11,7 +16,8 @@ export default {
 <template>
     <div class="container">
         <select>
-            <option value="">Alien</option>
+            <option value="empty" selected="selected">---</option>
+            <option v-for="archetipo in store.archetypeList" :value="archetipo.archetype_name">{{archetipo.archetype_name}}</option>
         </select>
 
     </div>
@@ -27,7 +33,7 @@ export default {
     select{
         margin-top:20px;
         height: 30px;
-        width: 100px;
+        width: auto;
         padding-left: 5px;
     }
 }

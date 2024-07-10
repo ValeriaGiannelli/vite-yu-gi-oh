@@ -30,18 +30,32 @@ export default{
       axios.get(store.apiURL)
         .then(result =>{
           // questo è l'attay degli oggetti
-          console.log(result.data.data);
+          // console.log(result.data.data);
           // lo devo salvare nel mio array vuoto
           store.cardList = result.data.data;
 
         }).catch(err => {
           console.log(err);
         })
+    },
+    // metodo che farà la chiamata all'API archetipo
+    getArchetype(){
+      axios.get(store.apiURLArchetype)
+      .then(result=>{
+        console.log(result.data);
+        store.archetypeList = result.data;
+      }).catch(err => {
+        console.log(err);
+      })
     }
   },
+
+  
+
   // lifeCicleHook
   created(){
     this.getCard();
+    this.getArchetype();
   }
 }
 
