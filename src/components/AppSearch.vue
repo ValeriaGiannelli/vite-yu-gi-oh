@@ -17,7 +17,7 @@ export default {
     <div class="container">
         <select v-model="store.archetypeSelected" @change="$emit('changeArchetype')">
             <!-- valore di partenza -->
-            <option value="none" selected="selected">-- Select architype --</option>
+            <option value="" selected="selected">-- Select architype --</option>
             <option value="all">All</option>
             <option value="none">None</option>
             <!-- lista degli archetipi in base all'API -->

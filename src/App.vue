@@ -33,23 +33,20 @@ export default{
       // se la persona ha selezionato qualcosa, prendi solo le card che hanno l'archetipo uguale
       if(store.archetypeSelected !== 'all' && store.archetypeSelected !== 'none'){
         endPoint += `&${store.apiArchetypeParam}=${store.archetypeSelected}`;
-      } //else if(store.archetypeSelected === 'none'){
-      //   let nonArchetype = [];
-      //   for(i = 0; i < store.cardList.length; i++){
-      //     if(store.cardList)
-      //   }
-      //   // console.log(store.cardList.filter(card => !store.archetypeList.includes(card)));
-      //   nonArchetype = store.cardList.filter(card => !store.archetypeList.includes(card));
-      //   console.log("non archetipi" + `${nonArchetype}`);
-      //   // store.cardList = store.cardList.filter(card => !store.archetypeList.includes(card));
-      // } 
-
+      } 
       axios.get(endPoint)
         .then(result =>{
           // questo è l'attay degli oggetti
           console.log(result.data.data);
           // lo devo salvare nel mio array vuoto
           store.cardList = result.data.data;
+
+          // se le card non hanno archetipo mettile in un nuovo array
+          if(store.archetypeSelected === 'none'){
+            store.cardList = store.cardList.filter(obj => {
+              return !obj.hasOwnProperty('archetype')
+            })
+          }
 
         }).catch(err => {
           console.log(err);
@@ -68,17 +65,11 @@ export default{
 
     // metodo per prendere solo le card non archetipo
     getNonArchetypeCards(){
+      // check if obj as how property 
       axios.get(store.apiURL)
       .then(result =>{
         store.cardList = result.data.data;
-        for(let i = 0; i < store.cardList.length; i++){
-          if(!store.cardList[i].archetype){
-            store.nonArchetypeCards.push(store.cardList[i])
-          }
-        }
-        console.log(store.nonArchetypeCards);
-        // let copy = {...store.nonArchetypeCards};
-        // console.log(copy);
+        
       })
 
     }
